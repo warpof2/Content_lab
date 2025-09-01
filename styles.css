@@ -1,0 +1,31 @@
+
+:root{ --bg:#0F1114; --paper:#14171B; --ink:#EDEFF2; --muted:#A8AFB9; --gold:#E8B15A; --copper:#C67946; --line:#262B31; }
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Inter,system-ui}
+a{color:#EFD39B;text-decoration:none} a:hover{text-decoration:underline}
+.wrapper{max-width:1120px;margin:0 auto;padding:28px}
+h1{margin:10px 0 6px;font:700 44px/1.15 "Playfair Display",serif}
+h2{margin:0 0 12px;font:700 30px/1.25 "Playfair Display",serif}
+h3{margin:0 0 8px;font:800 18px/1.25 Inter}
+p{margin:0 0 10px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 18px 40px rgba(0,0,0,.22);margin:18px 0}
+.badge{display:inline-block;background:rgba(232,177,90,.1);border:1px solid rgba(232,177,90,.35);padding:6px 10px;border-radius:999px;color:#EFD39B;font-weight:700;font-size:12px}
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0;padding:12px 18px;border-bottom:1px solid var(--line);background:#101317;position:sticky;top:0;z-index:20}
+.brandbar .left{display:flex;align-items:center;gap:12px}
+.brandbar .name{font-weight:800;letter-spacing:.3px}
+.brandbar nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav a{padding:8px 10px;border-radius:10px;border:1px solid transparent}
+.nav a.active,.nav a:hover{border-color:var(--line);background:#14171B}
+.footer{margin-top:30px;padding:20px;border-top:1px solid var(--line);color:var(--muted);text-align:center}
+.hero{padding:56px;border-radius:28px;background:linear-gradient(160deg,#1B1F24,#0F1114);border:1px solid var(--line);box-shadow:0 40px 80px rgba(0,0,0,.35);margin:18px 0}
+.flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0 10px}
+.flow .box{background:#101317;border:1px solid var(--line);padding:8px 12px;border-radius:10px;font-weight:700}
+.flow .arrow{color:var(--gold)}
+.grid{display:grid;gap:18px}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1000px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr} h1{font-size:34px} .brandbar nav{gap:8px}}
+.cta{display:inline-block;padding:14px 20px;border-radius:12px;background:linear-gradient(90deg,#EFD39B,#E8B15A);color:#2B2311;font-weight:800;border:none}
+.note{color:var(--muted);font-size:13px;margin-top:8px}
+.carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:14px;padding-bottom:10px}
+.carousel::-webkit-scrollbar{display:none}
+.card.slim{min-width:260px;flex:0 0 280px;margin:12px}
