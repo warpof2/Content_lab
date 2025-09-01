@@ -19,43 +19,210 @@
   <div><a class="cta" href="https://t.me/warpof" target="_blank">Связаться</a></div>
 </header>
 <div class="wrapper">
-
 <section class="hero" style="text-align:center">
   <div class="badge">Реальные сценарии • Социальное доказательство</div>
   <h1>Наши кейсы</h1>
   <p style="font-size:18px">Показываем, как связки дают результат. Цифры — ориентиры, механики — настоящие.</p>
 </section>
 <section class="card">
+  <h2>Кейс 1. Онлайн-курс по интерьерному дизайну</h2>
   <div class="grid cols-2">
-    <div class="card">
-      <h3>Кейс 1. Онлайн-курс по интерьерному дизайну</h3>
-      <p><b>Задача:</b> собрать лиды для премиум‑курса по комплектации.</p>
-      <p><b>Связка:</b> WhatsApp‑рассылка → Лендинг → Telegram‑канал (14‑дневный прогрев).</p>
-      <p><b>Результат:</b> +280 подписчиков за 2 недели · CPL ≈ 145 ₽ · 18 продаж → ROI ×3.</p>
+    <div class="svgwrap">
+      <!-- Inline SVG mockup: phone (WA), landing, TG channel -->
+      <svg viewBox="0 0 940 420" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#EFD39B"/><stop offset="1" stop-color="#E8B15A"/>
+          </linearGradient>
+          <style>
+            .frame{fill:#0c0f12;stroke:#21262d;stroke-width:2}
+            .title{fill:#cad1db;font:700 14px Inter}
+            .small{fill:#aab2bd;font:400 12px Inter}
+            .pill{fill:#101317;stroke:#262B31;stroke-width:1}
+          </style>
+        </defs>
+        <!-- WA phone -->
+        <rect x="10" y="20" rx="18" ry="18" width="220" height="380" class="frame"/>
+        <text x="25" y="52" class="title">WhatsApp рассылка</text>
+        <rect x="25" y="70" width="190" height="24" class="pill"/><text x="35" y="87" class="small">Лид-магнит: «5 шагов к комплектации»</text>
+        <rect x="25" y="102" width="190" height="24" class="pill"/><text x="35" y="119" class="small">Кнопка → Лендинг</text>
+
+        <!-- Landing -->
+        <rect x="260" y="20" rx="10" ry="10" width="320" height="380" class="frame"/>
+        <text x="275" y="52" class="title">Лендинг курса</text>
+        <rect x="275" y="70" width="290" height="24" class="pill"/><text x="285" y="87" class="small">Оффер + программа + кейсы</text>
+        <rect x="275" y="102" width="180" height="24" class="pill"/><text x="285" y="119" class="small">Форма → TG-канал</text>
+
+        <!-- Telegram -->
+        <rect x="610" y="20" rx="18" ry="18" width="320" height="380" class="frame"/>
+        <text x="625" y="52" class="title">TG-канал (14 дней)</text>
+        <rect x="625" y="70" width="290" height="24" class="pill"/><text x="635" y="87" class="small">Сторителлинг, чек-листы, сессии Q&A</text>
+        <rect x="625" y="102" width="210" height="24" class="pill"/><text x="635" y="119" class="small">Дожим → оплата курса</text>
+
+        <!-- Arrows -->
+        <path d="M230,120 C250,120 260,120 260,120" stroke="url(#g)" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+        <path d="M580,120 C600,120 610,120 610,120" stroke="url(#g)" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 z" fill="#E8B15A"/>
+          </marker>
+        </defs>
+      </svg>
     </div>
-    <div class="card">
-      <h3>Кейс 2. Премиум‑салон красоты</h3>
-      <p><b>Задача:</b> заполняем график без холодных звонков.</p>
-      <p><b>Связка:</b> Лендинг‑визитка → TG‑канал с акциями → рассылки WA/Email.</p>
-      <p><b>Результат:</b> 340 заявок/мес · 42% запись из TG · расписание на 3 недели вперёд.</p>
-    </div>
-    <div class="card">
-      <h3>Кейс 3. Юридическая компания</h3>
-      <p><b>Задача:</b> снизить стоимость лида и автоматизировать первичный контакт.</p>
-      <p><b>Связка:</b> Квиз → WhatsApp‑бот → менеджер → CRM.</p>
-      <p><b>Результат:</b> CPL ≈ 320 ₽ (вместо 750 ₽) · 60% типовых вопросов закрывает бот · 47 новых клиентов/мес.</p>
-    </div>
-    <div class="card">
-      <h3>Кейс 4. Авторский курс по self‑branding</h3>
-      <p><b>Задача:</b> упаковать оффер и прогреть аудиторию.</p>
-      <p><b>Связка:</b> Reels → Лендинг с PDF‑лид‑магнитом → TG‑канал.</p>
-      <p><b>Результат:</b> 1 150 скачиваний PDF · 27% конверсия в заявку · 34 оплаты (19 000 ₽).</p>
+    <div>
+      <h3>Схема связки</h3>
+      <div class="flow"><div class="box">WA рассылка</div><div class="arrow">→</div><div class="box">Лендинг</div><div class="arrow">→</div><div class="box">TG‑канал (14 дней)</div><div class="arrow">→</div><div class="box">Оплата</div></div>
+      <h3>Контентные точки</h3>
+      <ul class="list">
+        <li>Лид‑магнит: мини‑гайд по комплектации.</li>
+        <li>Серия постов: «ошибки/кейсы/до‑после».</li>
+        <li>2 вебинара‑встречи в TG + дожим.</li>
+      </ul>
+      <div class="kpis">
+        <div class="kpi"><span class="small">Прирост базы</span><b>+280</b></div>
+        <div class="kpi"><span class="small">CPL</span><b>≈ 145 ₽</b></div>
+        <div class="kpi"><span class="small">Продажи</span><b>18</b></div>
+      </div>
     </div>
   </div>
-  <p class="note">*Примечание: кейсы адаптированы под наш стек. Конкретные KPI фиксируем на брифе и считаем по вашей аналитике.</p>
-  <p style="margin-top:14px"><a class="cta" href="https://t.me/warpof" target="_blank">Хочу такой же результат</a></p>
 </section>
-
+<section class="card">
+  <h2>Кейс 2. Премиум‑салон красоты</h2>
+  <div class="grid cols-2">
+    <div class="svgwrap">
+      <svg viewBox="0 0 940 420" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFD39B"/><stop offset="1" stop-color="#E8B15A"/></linearGradient>
+          <style>.frame{fill:#0c0f12;stroke:#21262d;stroke-width:2}.title{fill:#cad1db;font:700 14px Inter}.small{fill:#aab2bd;font:400 12px Inter}.pill{fill:#101317;stroke:#262B31;stroke-width:1}</style>
+        </defs>
+        <!-- Landing -->
+        <rect x="20" y="20" rx="10" ry="10" width="300" height="380" class="frame"/>
+        <text x="35" y="52" class="title">Лендинг‑визитка</text>
+        <rect x="35" y="70" width="270" height="24" class="pill"/><text x="45" y="87" class="small">Портфолио + прайс + online‑запись</text>
+        <!-- TG -->
+        <rect x="340" y="20" rx="18" ry="18" width="280" height="380" class="frame"/>
+        <text x="355" y="52" class="title">TG‑канал</text>
+        <rect x="355" y="70" width="250" height="24" class="pill"/><text x="365" y="87" class="small">Лимит‑офферы и персональные акции</text>
+        <!-- WA/Email -->
+        <rect x="650" y="20" rx="18" ry="18" width="270" height="380" class="frame"/>
+        <text x="665" y="52" class="title">WA / Email</text>
+        <rect x="665" y="70" width="240" height="24" class="pill"/><text x="675" y="87" class="small">Напоминания и возврат</text>
+        <!-- Arrows -->
+        <path d="M320,120 L340,120" stroke="url(#g2)" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+        <path d="M620,120 L650,120" stroke="url(#g2)" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+        <defs><marker id="arrow2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#E8B15A"/></marker></defs>
+      </svg>
+    </div>
+    <div>
+      <h3>Схема связки</h3>
+      <div class="flow"><div class="box">Лендинг</div><div class="arrow">→</div><div class="box">TG‑канал</div><div class="arrow">→</div><div class="box">WA/Email</div><div class="arrow">→</div><div class="box">Запись</div></div>
+      <h3>Контентные точки</h3>
+      <ul class="list">
+        <li>До‑после, backstage, ограниченные окна записи.</li>
+        <li>Промокоды входа в «клуб клиента».</li>
+        <li>Napominания о повторных процедурах.</li>
+      </ul>
+      <div class="kpis">
+        <div class="kpi"><span class="small">Заявки/мес</span><b>≈ 340</b></div>
+        <div class="kpi"><span class="small">CR в запись</span><b>≈ 42%</b></div>
+        <div class="kpi"><span class="small">Заполненность</span><b>3 недели</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <h2>Кейс 3. Юридическая компания</h2>
+  <div class="grid cols-2">
+    <div class="svgwrap">
+      <svg viewBox="0 0 940 420" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs>
+          <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFD39B"/><stop offset="1" stop-color="#E8B15A"/></linearGradient>
+          <style>.frame{fill:#0c0f12;stroke:#21262d;stroke-width:2}.title{fill:#cad1db;font:700 14px Inter}.small{fill:#aab2bd;font:400 12px Inter}.pill{fill:#101317;stroke:#262B31;stroke-width:1}</style>
+        </defs>
+        <!-- Quiz -->
+        <rect x="20" y="20" rx="10" ry="10" width="260" height="380" class="frame"/>
+        <text x="35" y="52" class="title">Квиз (квалификация)</text>
+        <rect x="35" y="70" width="230" height="24" class="pill"/><text x="45" y="87" class="small">Доход / долги / контакт</text>
+        <!-- WA bot -->
+        <rect x="300" y="20" rx="18" ry="18" width="260" height="380" class="frame"/>
+        <text x="315" y="52" class="title">WA‑бот</text>
+        <rect x="315" y="70" width="230" height="24" class="pill"/><text x="325" y="87" class="small">Авто‑ответы и чек‑лист</text>
+        <!-- CRM -->
+        <rect x="580" y="20" rx="10" ry="10" width="340" height="380" class="frame"/>
+        <text x="595" y="52" class="title">CRM + менеджер</text>
+        <rect x="595" y="70" width="310" height="24" class="pill"/><text x="605" y="87" class="small">Слоты созвона и договор</text>
+        <!-- arrows -->
+        <path d="M280,120 L300,120" stroke="url(#g3)" stroke-width="3" fill="none" marker-end="url(#a3)"/>
+        <path d="M560,120 L580,120" stroke="url(#g3)" stroke-width="3" fill="none" marker-end="url(#a3)"/>
+        <defs><marker id="a3" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#E8B15A"/></marker></defs>
+      </svg>
+    </div>
+    <div>
+      <h3>Схема связки</h3>
+      <div class="flow"><div class="box">Квиз</div><div class="arrow">→</div><div class="box">WA‑бот</div><div class="arrow">→</div><div class="box">CRM/менеджер</div><div class="arrow">→</div><div class="box">Договор</div></div>
+      <h3>Контентные точки</h3>
+      <ul class="list">
+        <li>Квиз «прохожу/не прохожу» — экономит время менеджера.</li>
+        <li>Бот: чек‑лист документов, ответы на частые вопросы.</li>
+        <li>Слоты созвона + автоматические напоминания.</li>
+      </ul>
+      <div class="kpis">
+        <div class="kpi"><span class="small">CPL</span><b>≈ 320 ₽</b></div>
+        <div class="kpi"><span class="small">Экономия</span><b>60% времени</b></div>
+        <div class="kpi"><span class="small">Новые клиенты</span><b>≈ 47/мес</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <h2>Кейс 4. Авторский курс по self‑branding</h2>
+  <div class="grid cols-2">
+    <div class="svgwrap">
+      <svg viewBox="0 0 940 420" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs>
+          <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFD39B"/><stop offset="1" stop-color="#E8B15A"/></linearGradient>
+          <style>.frame{fill:#0c0f12;stroke:#21262d;stroke-width:2}.title{fill:#cad1db;font:700 14px Inter}.small{fill:#aab2bd;font:400 12px Inter}.pill{fill:#101317;stroke:#262B31;stroke-width:1}</style>
+        </defs>
+        <!-- Reels -->
+        <rect x="20" y="20" rx="18" ry="18" width="240" height="380" class="frame"/>
+        <text x="35" y="52" class="title">Reels/Shorts</text>
+        <rect x="35" y="70" width="210" height="24" class="pill"/><text x="45" y="87" class="small">Хуки + оффер в 5 сек</text>
+        <!-- Landing + PDF -->
+        <rect x="280" y="20" rx="10" ry="10" width="320" height="380" class="frame"/>
+        <text x="295" y="52" class="title">Лендинг + PDF</text>
+        <rect x="295" y="70" width="290" height="24" class="pill"/><text x="305" y="87" class="small">Лид‑магнит «Личный бренд за 7 дней»</text>
+        <!-- TG -->
+        <rect x="620" y="20" rx="18" ry="18" width="300" height="380" class="frame"/>
+        <text x="635" y="52" class="title">TG‑канал</text>
+        <rect x="635" y="70" width="270" height="24" class="pill"/><text x="645" y="87" class="small">Серии «закулисье» и Q&A</text>
+        <!-- arrows -->
+        <path d="M260,120 L280,120" stroke="url(#g4)" stroke-width="3" fill="none" marker-end="url(#a4)"/>
+        <path d="M600,120 L620,120" stroke="url(#g4)" stroke-width="3" fill="none" marker-end="url(#a4)"/>
+        <defs><marker id="a4" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#E8B15A"/></marker></defs>
+      </svg>
+    </div>
+    <div>
+      <h3>Схема связки</h3>
+      <div class="flow"><div class="box">Reels</div><div class="arrow">→</div><div class="box">Лендинг + PDF</div><div class="arrow">→</div><div class="box">TG‑канал</div><div class="arrow">→</div><div class="box">Запуск</div></div>
+      <h3>Контентные точки</h3>
+      <ul class="list">
+        <li>Короткие видео с «триггер‑историями».</li>
+        <li>PDF с быстрыми победами + план 7 дней.</li>
+        <li>Серии «кухня курса»: модули, результаты, кейсы.</li>
+      </ul>
+      <div class="kpis">
+        <div class="kpi"><span class="small">Скачивания PDF</span><b>≈ 1 150</b></div>
+        <div class="kpi"><span class="small">В заявку</span><b>≈ 27%</b></div>
+        <div class="kpi"><span class="small">Оплаты</span><b>≈ 34</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card" style="text-align:center">
+  <h2>Готовы визуализировать ваш кейс?</h2>
+  <p>Соберём мокапы под вашу нишу и связку, чтобы команда и клиенты сразу видели систему и цифры.</p>
+  <p><a class="cta" href="https://t.me/warpof" target="_blank">Запросить макеты в Telegram</a></p>
+</section>
 <div class="footer">© 2025 Content Lab · <a href="https://t.me/warpof" target="_blank">@warpof</a></div>
 </div>
 </body>
