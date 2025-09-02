@@ -43,7 +43,7 @@
 
         @media (max-width: 768px) {
             .slide {
-                padding: 10px 8px;
+                padding: 5px 8px;
                 overflow-y: auto;
                 height: 100vh;
                 justify-content: flex-start;
@@ -51,110 +51,120 @@
             }
 
             h1 {
-                font-size: 1.6rem;
-                margin-bottom: 0.5rem;
+                font-size: 1.3rem;
+                margin-bottom: 0.3rem;
                 line-height: 1;
             }
 
             h2 {
-                font-size: 1.3rem;
-                margin-bottom: 0.5rem;
+                font-size: 1.1rem;
+                margin-bottom: 0.3rem;
                 line-height: 1;
             }
 
             h3 {
-                font-size: 1.1rem;
-                margin-bottom: 0.3rem;
+                font-size: 1rem;
+                margin-bottom: 0.2rem;
             }
 
             p {
-                font-size: 0.85rem;
-                line-height: 1.3;
-                margin-bottom: 0.7rem;
+                font-size: 0.75rem;
+                line-height: 1.2;
+                margin-bottom: 0.5rem;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 0.7rem;
+                gap: 0.5rem;
                 max-width: 100%;
-                margin-top: 0.5rem;
+                margin-top: 0.3rem;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
-                margin-top: 1rem;
+                gap: 0.8rem;
+                margin-top: 0.8rem;
                 max-width: 100%;
             }
 
             .stat-card {
-                padding: 1.5rem 1rem;
+                padding: 1rem 0.8rem;
             }
 
             .stat-number {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .stat-text {
-                font-size: 0.85rem;
-                margin-top: 0.3rem;
+                font-size: 0.75rem;
+                margin-top: 0.2rem;
             }
 
             .service-card {
-                padding: 1rem;
-                margin-bottom: 0.3rem;
+                padding: 0.8rem;
+                margin-bottom: 0.2rem;
             }
 
             .service-title {
-                font-size: 1rem;
-                margin-bottom: 0.5rem;
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
             }
 
             .service-title::before {
-                width: 6px;
-                height: 6px;
+                width: 5px;
+                height: 5px;
             }
 
             .pricing-grid {
                 max-width: 100%;
-                gap: 0.7rem;
-                margin-top: 0.5rem;
+                gap: 0.5rem;
+                margin-top: 0.3rem;
             }
 
             .price-card {
                 flex-direction: column;
                 text-align: center;
-                padding: 1rem 0.8rem;
-                gap: 0.7rem;
+                padding: 0.8rem 0.6rem;
+                gap: 0.5rem;
                 max-width: 100%;
             }
 
             .price {
-                font-size: 1.8rem;
-                margin-bottom: 0.3rem;
+                font-size: 1.5rem;
+                margin-bottom: 0.2rem;
             }
 
             .cta-button {
-                padding: 12px 25px;
-                font-size: 1rem;
-                margin-top: 1rem;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                margin-top: 0.8rem;
             }
 
             .logo {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 0.5rem;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 0.3rem;
             }
 
             .geometric-bg {
-                opacity: 0.03;
+                display: none;
             }
 
             .slide-counter {
-                top: 10px;
-                right: 10px;
-                padding: 4px 8px;
+                top: 5px;
+                right: 5px;
+                padding: 3px 6px;
+                font-size: 0.6rem;
+            }
+
+            /* Специально для проблемных слайдов */
+            .slide:nth-child(2) p,
+            .slide:nth-child(3) p,
+            .slide:nth-child(4) p,
+            .slide:nth-child(5) p,
+            .slide:nth-child(6) p {
                 font-size: 0.7rem;
+                margin-bottom: 0.4rem;
             }
         }
 
