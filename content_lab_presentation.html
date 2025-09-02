@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Lab - Презентация</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --graphite: #0F1114;
+            --deep-gray: #1A1E23;
+            --premium-gold: #E8B15A;
+            --copper: #C67946;
+            --soft-lemon: #F4E17E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--graphite);
+            color: white;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            padding: 60px;
+            position: relative;
+            background: linear-gradient(135deg, var(--graphite) 0%, var(--deep-gray) 100%);
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--premium-gold), var(--soft-lemon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 4px 20px rgba(232, 177, 90, 0.3);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--premium-gold);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--copper);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 900px;
+            opacity: 0.9;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 10px 30px rgba(232, 177, 90, 0.4));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(232, 177, 90, 0.1);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(232, 177, 90, 0.2);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--premium-gold), var(--copper));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: exclude;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--premium-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-text {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .service-card {
+            background: var(--deep-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--premium-gold);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(232, 177, 90, 0.05);
+            transform: translateX(10px);
+        }
+
+        .service-title {
+            color: var(--premium-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--premium-gold), var(--copper));
+            border: none;
+            color: var(--graphite);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(232, 177, 90, 0.4);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(232, 177, 90, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .price-card {
+            background: var(--deep-gray);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .price-card.featured {
+            background: linear-gradient(135deg, rgba(232, 177, 90, 0.1), rgba(198, 121, 70, 0.1));
+            border: 2px solid var(--premium-gold);
+            transform: scale(1.05);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .price {
+            font-size: 3rem;
+            color: var(--premium-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--premium-gold), var(--copper));
+            color: var(--graphite);
+            padding: 20px 50px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            margin-top: 3rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(232, 177, 90, 0.4);
+        }
+
+        .geometric-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            pointer-events: none;
+            background-image: 
+                linear-gradient(45deg, var(--premium-gold) 1px, transparent 1px),
+                linear-gradient(-45deg, var(--copper) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">7</span>
+        </div>
+
+        <!-- Слайд 1: Титульный -->
+        <div class="slide active">
+            <div class="geometric-bg"></div>
+            <svg class="logo" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="100" fill="#0F1114"/>
+                <!-- Nodes -->
+                <circle cx="75" cy="60" r="8" fill="#E8B15A"/>
+                <circle cx="125" cy="60" r="8" fill="#E8B15A"/>
+                <circle cx="150" cy="90" r="8" fill="#E8B15A"/>
+                <circle cx="140" cy="130" r="8" fill="#E8B15A"/>
+                <circle cx="100" cy="150" r="8" fill="#E8B15A"/>
+                <circle cx="60" cy="130" r="8" fill="#E8B15A"/>
+                <circle cx="50" cy="90" r="8" fill="#E8B15A"/>
+                <circle cx="100" cy="100" r="6" fill="#E8B15A"/>
+                <!-- Connections -->
+                <line x1="75" y1="60" x2="50" y2="90" stroke="#E8B15A" stroke-width="3"/>
+                <line x1="75" y1="60" x2="100" y2="100" stroke="#E8B15A" stroke-width="3"/>
+                <line x1="125" y1="60" x2="150" y2="90" stroke="#E8B15A" stroke-width="3"/>
+                <line x1="125" y1="60" x2="100" y2="100" stroke="#E8B15A" stroke-width="3"/>
+                <line x1="150" y1="90" x2="140" y2="130" stroke="#E8B15A" stroke-width="3"/>
+                <line x1="140" y1="130" x2="100" y2="150" stroke="#E8B15A" stroke-width="3"/>
+                <line x1="100" y1="150" x2="60" y2="130" stroke="#E8B15A" stroke-width="3"/>
+                <line x1="60" y1="130" x2="50" y2="90" stroke="#E8B15A" stroke-width="3"/>
+                <!-- Text -->
+                <text x="100" y="175" text-anchor="middle" fill="#E8B15A" font-family="Montserrat" font-size="18" font-weight="600" letter-spacing="3px">CONTENT</text>
+                <text x="100" y="195" text-anchor="middle" fill="#E8B15A" font-family="Montserrat" font-size="18" font-weight="600" letter-spacing="3px">LAB</text>
+            </svg>
+            <h1>Система, которая приводит клиентов</h1>
+            <p>Превращаем ваш трафик в стабильный поток заявок через единую маркетинговую машину</p>
+        </div>
+
+        <!-- Слайд 2: Проблема -->
+        <div class="slide">
+            <div class="geometric-bg"></div>
+            <h2>Хватит сливать бюджет без результата</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-title">❌ Тратите на рекламу</div>
+                    <p>А клиенты не идут. Деньги улетают, результата нет</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-title">❌ Есть сайт</div>
+                    <p>Но заявок единицы. Посетители уходят ни с чем</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-title">❌ Делаете контент</div>
+                    <p>Но продажи стоят. Охват есть, денег нет</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-title">❌ Не понимаете</div>
+                    <p>Какие каналы работают. Гадаете на кофейной гуще</p>
+                </div>
+            </div>
+            <p style="margin-top: 3rem; color: var(--premium-gold); font-size: 1.6rem;">
+                <strong>Проблема не в вас. Проблема в системе.</strong>
+            </p>
+        </div>
+
+        <!-- Слайд 3: Решение -->
+        <div class="slide">
+            <div class="geometric-bg"></div>
+            <h2>Создаём маркетинговую машину</h2>
+            <p style="font-size: 1.6rem; margin-bottom: 3rem;">
+                Которая работает <span style="color: var(--premium-gold);">24/7</span> и приводит клиентов на автопилоте
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-title">🎯 Лендинг-магнит</div>
+                    <p>Цепляет за 3 секунды и заставляет оставить заявку</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-title">📱 Мгновенная связь</div>
+                    <p>Через 30 секунд клиент получает сообщение</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-title">🤖 Автопрогрев</div>
+                    <p>Система сама готовит клиента к покупке</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-title">📊 Честная аналитика</div>
+                    <p>Видите каждую заявку и источник прибыли</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Слайд 4: Результаты -->
+        <div class="slide">
+            <div class="geometric-bg"></div>
+            <h2>Результаты наших клиентов</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">280</div>
+                    <div class="stat-text">заявок за 2 недели<br><strong>Курс по дизайну</strong></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">340</div>
+                    <div class="stat-text">заявок в месяц<br><strong>Премиум-салон</strong></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">320₽</div>
+                    <div class="stat-text">стоимость лида<br><strong>Юридическая компания</strong></div>
+                </div>
+            </div>
+            <p style="margin-top: 3rem; color: var(--premium-gold); font-size: 1.5rem;">
+                <strong>Хотите такие же результаты? Мы знаем, как это сделать.</strong>
+            </p>
+        </div>
+
+        <!-- Слайд 5: Услуги -->
+        <div class="slide">
+            <div class="geometric-bg"></div>
+            <h2>Что входит в систему</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-title">🚀 Готовая система</div>
+                    <p>Полная связка: рассылки → лендинг → Telegram → отчёты</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-title">📝 Продающие тексты</div>
+                    <p>Цепляющие тексты без воды. Только суть и выгоды</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-title">🎨 Премиум-дизайн</div>
+                    <p>Красивая упаковка: презентации, PDF, креативы</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-title">📊 Аналитика</div>
+                    <p>Понятные цифры и рекомендации по улучшению</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Слайд 6: Тарифы -->
+        <div class="slide">
+            <div class="geometric-bg"></div>
+            <h2>Тарифы</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Старт</h3>
+                    <div class="price">55 000₽</div>
+                    <p>Лендинг + тексты<br>WhatsApp/Telegram<br>1 месяц поддержки</p>
+                </div>
+                <div class="price-card featured">
+                    <h3>Система</h3>
+                    <div class="price">89 000₽</div>
+                    <p>Всё из "Старт" +<br>Автоматические рассылки<br>CRM-интеграция<br>2 месяца поддержки</p>
+                </div>
+                <div class="price-card">
+                    <h3>Всё включено</h3>
+                    <div class="price">129 000₽</div>
+                    <p>Всё из "Система" +<br>Премиум-дизайн<br>Квизы и чат-боты<br>3 месяца поддержки</p>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; color: var(--soft-lemon);">
+                💡 Окупаемость: 3-15 заявок (в зависимости от вашего чека)
+            </p>
+        </div>
+
+        <!-- Слайд 7: CTA -->
+        <div class="slide">
+            <div class="geometric-bg"></div>
+            <h2>Готовы удвоить заявки?</h2>
+            <p>На декабрь свободно только <strong style="color: var(--premium-gold);">2 места</strong></p>
+            <p>Старт работ в течение <strong style="color: var(--premium-gold);">5 дней</strong></p>
+            <p>Готовая система через <strong style="color: var(--premium-gold);">21-30 дней</strong></p>
+            
+            <div style="margin: 3rem 0;">
+                <p style="color: var(--soft-lemon); font-size: 1.2rem; margin-bottom: 1rem;">
+                    ⚠️ Каждый день без системы = потерянные клиенты
+                </p>
+            </div>
+
+            <a href="#" class="cta-button">Обсудить проект в Telegram</a>
+            
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                Первая консультация <strong>бесплатно</strong><br>
+                @warpof
+            </p>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn" id="prevBtn">‹</button>
+            <button class="nav-btn" id="nextBtn">›</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+        // Навигация клавишами
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Клик по слайду для перехода
+        document.addEventListener('click', function(e) {
+            if (!e.target.matches('.nav-btn, .cta-button')) {
+                nextSlide();
+            }
+        });
+
+        // Автоматическая анимация логотипа
+        setInterval(() => {
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                logo.style.transform = `rotate(${Math.sin(Date.now() * 0.001) * 5}deg)`;
+            }
+        }, 50);
+    </script>
+</body>
+</html>
